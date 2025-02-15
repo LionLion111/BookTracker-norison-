@@ -1,0 +1,57 @@
+<mxfile host="Electron" modified="2024-01-19T16:10:22.964Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.21 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="q6-ot2ZVUL1l8FTEDoqI" version="22.1.21" type="device">
+  <diagram name="Page-1" id="9FZHxxejBc3NsM1Z9Vd5">
+    <mxGraphModel dx="1338" dy="988" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="FCXPWsU9b27rNf32MopT-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" parent="1" source="FCXPWsU9b27rNf32MopT-1" target="FCXPWsU9b27rNf32MopT-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FCXPWsU9b27rNf32MopT-1" value="«API»&lt;br&gt;&lt;b&gt;BookTracker Private API&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="599" y="280" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="FCXPWsU9b27rNf32MopT-2" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" parent="FCXPWsU9b27rNf32MopT-1" vertex="1">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FCXPWsU9b27rNf32MopT-3" value="BookTracker" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;" parent="1" vertex="1">
+          <mxGeometry x="840" y="270" width="80" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="FCXPWsU9b27rNf32MopT-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" parent="1" source="FCXPWsU9b27rNf32MopT-5" target="FCXPWsU9b27rNf32MopT-11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FCXPWsU9b27rNf32MopT-5" value="«UI»&lt;br&gt;&lt;b&gt;Web&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="80" y="200" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="FCXPWsU9b27rNf32MopT-6" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" parent="FCXPWsU9b27rNf32MopT-5" vertex="1">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FCXPWsU9b27rNf32MopT-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" parent="1" source="FCXPWsU9b27rNf32MopT-7" target="FCXPWsU9b27rNf32MopT-11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FCXPWsU9b27rNf32MopT-7" value="«UI»&lt;br&gt;&lt;b&gt;Mobile&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="80" y="360" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="FCXPWsU9b27rNf32MopT-8" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" parent="FCXPWsU9b27rNf32MopT-7" vertex="1">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FCXPWsU9b27rNf32MopT-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" parent="1" source="FCXPWsU9b27rNf32MopT-11" target="FCXPWsU9b27rNf32MopT-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FCXPWsU9b27rNf32MopT-11" value="«API»&lt;br&gt;&lt;b&gt;BookTracker BFF API&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="360" y="280" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="FCXPWsU9b27rNf32MopT-12" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" parent="FCXPWsU9b27rNf32MopT-11" vertex="1">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

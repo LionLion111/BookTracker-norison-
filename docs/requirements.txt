@@ -1,0 +1,29 @@
+User
+1. Registration
+2. Login
+3. Track the status of the book
+4. Add Book for tracking
+5. Get list of books
+6. Get book details
+7. Request book adding if it does not exist
+
+Admin
+1. Login
+2. Get list of users
+3. Get list of books
+4. Get user statistic for book
+5. Get book details
+6. Add book
+7. Edit book
+8. Delete book
+9. Review new book requests
+10. Create moderator
+
+Moderator
+1. Login
+3. Add book
+4. Edit book
+5. Delete book
+6. Get list of books
+7. Get book details
+8. Review new book requests
