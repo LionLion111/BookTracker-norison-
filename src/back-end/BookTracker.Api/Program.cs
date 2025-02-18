@@ -1,3 +1,5 @@
+using BookTracker.Api.Extensions;
+using BookTracker.Api.Features.Publishers.Create;
 using BookTracker.Persistence;
 using BookTracker.Persistence.Entities;
 
@@ -22,6 +24,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapOpenApi();
 app.MapScalarApiReference();
-app.MapIdentityApi<User>();
-
+app.MapGroup("/account").MapIdentityApi<User>();
+app.MapEndpoints();
 app.Run();
