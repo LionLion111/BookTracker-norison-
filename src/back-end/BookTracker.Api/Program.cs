@@ -1,6 +1,6 @@
 using BookTracker.Persistence;
+using BookTracker.Persistence.Entities;
 
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 using Scalar.AspNetCore;
@@ -12,7 +12,7 @@ builder.Services.AddAuthorization();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("Database")));
 
-builder.Services.AddIdentityApiEndpoints<IdentityUser>().AddEntityFrameworkStores<AppDbContext>();
+builder.Services.AddIdentityApiEndpoints<User>().AddEntityFrameworkStores<AppDbContext>();
 
 builder.Services.AddOpenApi();
 
@@ -20,9 +20,8 @@ var app = builder.Build();
 
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapOpenApi();
 app.MapScalarApiReference();
-app.MapIdentityApi<IdentityUser>();
+app.MapIdentityApi<User>();
 
 app.Run();
