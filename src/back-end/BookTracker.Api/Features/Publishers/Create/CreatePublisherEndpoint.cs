@@ -1,7 +1,10 @@
-using System.Security.Claims;
+using BookTracker.Application.Features.Publishers.Create;
 
-using BookTracker.Persistence;
-using BookTracker.Persistence.Entities;
+using Mapster;
+
+using MediatR;
+
+using Microsoft.AspNetCore.Mvc;
 
 namespace BookTracker.Api.Features.Publishers.Create;
 
@@ -11,30 +14,22 @@ public class CreatePublisherEndpoint : IEndpoint
 
     public void Map(RouteGroupBuilder builder)
     {
-        builder.MapPost("/",
-                async (AppDbContext dbContext, ClaimsPrincipal user, CreatePublisherRequest request,
-                    CancellationToken cancellationToken) =>
-                {
-                    var now = DateTime.UtcNow;
-                    var userId = Guid.Parse(user.FindFirstValue(ClaimTypes.NameIdentifier)!);
-
-                    var publisher = new Publisher
-                    {
-                        Id = Guid.CreateVersion7(),
-                        Name = request.Name,
-                        CreatedDateTime = now,
-                        ModifiedDateTime = now,
-                        CreatedBy = userId,
-                        ModifiedBy = userId
-                    };
-
-                    await dbContext.Publishers.AddAsync(publisher, cancellationToken);
-                    await dbContext.SaveChangesAsync(cancellationToken);
-
-                    return Results.Ok(new CreatePublisherResponse { Id = publisher.Id });
-                })
+        builder
+            .MapPost("/", HandleAsync)
             .WithName("Create Publisher")
             .WithDescription("Creates a new publisher.")
-            .Produces<CreatePublisherResponse>();
+            .Produces<CreatePublisherResponse>()
+            .ProducesValidationProblem();
+    }
+
+    private static async Task<IResult> HandleAsync(
+        [FromServices] ISender sender,
+        [FromBody] CreatePublisherRequest request,
+        CancellationToken cancellationToken)
+    {
+        var command = request.Adapt<CreatePublisherCommand>();
+        var result = await sender.Send(command, cancellationToken);
+        var response = result.Adapt<CreatePublisherResponse>();
+        return Results.Ok(response);
     }
 }

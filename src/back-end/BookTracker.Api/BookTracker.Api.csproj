@@ -8,6 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\BookTracker.Application\BookTracker.Application.csproj" />
       <ProjectReference Include="..\BookTracker.Persistence\BookTracker.Persistence.csproj" />
     </ItemGroup>
 

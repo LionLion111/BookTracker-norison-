@@ -1,5 +1,7 @@
 using BookTracker.Api.Extensions;
-using BookTracker.Api.Features.Publishers.Create;
+using BookTracker.Api.Services.Implementations;
+using BookTracker.Application;
+using BookTracker.Application.Services.Abstractions;
 using BookTracker.Persistence;
 using BookTracker.Persistence.Entities;
 
@@ -17,6 +19,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddIdentityApiEndpoints<User>().AddEntityFrameworkStores<AppDbContext>();
 
 builder.Services.AddOpenApi();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
+builder.Services.AddApplication();
 
 var app = builder.Build();
 
