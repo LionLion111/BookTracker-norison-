@@ -1,6 +1,7 @@
 using System.Reflection;
 
 using BookTracker.Api.Features;
+using BookTracker.Api.Filters;
 
 namespace BookTracker.Api.Extensions;
 
@@ -21,7 +22,8 @@ public static class EndpointRouteBuilderExtensions
             var groupBuilder = builder
                 .MapGroup(group.Key)
                 .RequireAuthorization()
-                .ProducesProblem(StatusCodes.Status401Unauthorized);
+                .ProducesProblem(StatusCodes.Status401Unauthorized)
+                .AddEndpointFilter<ExceptionFilter>();
 
             foreach (var endpoint in group)
             {
