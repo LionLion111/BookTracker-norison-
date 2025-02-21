@@ -11,5 +11,6 @@
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.2" />
     <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.3" />
     <PackageVersion Include="Scalar.AspNetCore" Version="2.0.14" />
+    <PackageVersion Include="Sieve" Version="2.5.5" />
   </ItemGroup>
 </Project>

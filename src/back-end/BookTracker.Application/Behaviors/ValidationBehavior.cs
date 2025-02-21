@@ -26,6 +26,11 @@ public class ValidationBehavior<TRequest, TResponse>(IEnumerable<IValidator<TReq
             .SelectMany(x => x.Errors)
             .ToList();
 
+        if (failures.Count == 0)
+        {
+            return await next();
+        }
+
         throw new ValidationException(null, failures);
     }
 }

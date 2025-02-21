@@ -8,6 +8,8 @@ using MediatR;
 
 using Microsoft.Extensions.DependencyInjection;
 
+using Sieve.Services;
+
 namespace BookTracker.Application;
 
 public static class ServiceCollectionExtensions
@@ -26,6 +28,7 @@ public static class ServiceCollectionExtensions
 
         services.AddSingleton<IDateTimeService, DateTimeService>();
         services.AddSingleton<IGuidGenerator, GuidGenerator>();
+        services.AddSingleton<ISieveProcessor, AppSieveProcessor>();
 
         return services;
     }
