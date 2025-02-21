@@ -4,8 +4,6 @@ using BookTracker.Application.Services.GuidGenerator;
 using BookTracker.Persistence;
 using BookTracker.Persistence.Entities;
 
-using FluentValidation;
-
 using Mapster;
 
 namespace BookTracker.Application.Features.Publishers.Create;
@@ -14,16 +12,13 @@ public class CreatePublisherCommandHandler(
     AppDbContext dbContext,
     IDateTimeService dateTimeService,
     IGuidGenerator guidGenerator,
-    ICurrentUserService currentUserService,
-    IValidator<CreatePublisherCommand> validator)
+    ICurrentUserService currentUserService)
     : ICommandHandler<CreatePublisherCommand, CreatePublisherCommandResult>
 {
     public async Task<CreatePublisherCommandResult> Handle(
         CreatePublisherCommand request,
         CancellationToken cancellationToken)
     {
-        await validator.ValidateAndThrowAsync(request, cancellationToken);
-
         var userId = currentUserService.UserId;
         var time = dateTimeService.UtcNow;
 

@@ -1,7 +1,10 @@
+using BookTracker.Application.Behaviors;
 using BookTracker.Application.Services.DateTime;
 using BookTracker.Application.Services.GuidGenerator;
 
 using FluentValidation;
+
+using MediatR;
 
 using Microsoft.Extensions.DependencyInjection;
 
@@ -16,6 +19,7 @@ public static class ServiceCollectionExtensions
         services.AddMediatR(config =>
         {
             config.RegisterServicesFromAssembly(assembly);
+            config.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
         });
 
         services.AddValidatorsFromAssembly(assembly);
