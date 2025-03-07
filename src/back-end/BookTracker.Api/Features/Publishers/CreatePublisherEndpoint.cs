@@ -1,12 +1,10 @@
 using BookTracker.Application.Features.Publishers.Create;
 
-using Mapster;
-
 using MediatR;
 
 using Microsoft.AspNetCore.Mvc;
 
-namespace BookTracker.Api.Features.Publishers.Create;
+namespace BookTracker.Api.Features.Publishers;
 
 public class CreatePublisherEndpoint : IEndpoint
 {
@@ -18,18 +16,16 @@ public class CreatePublisherEndpoint : IEndpoint
             .MapPost("/", HandleAsync)
             .WithName("Create Publisher")
             .WithDescription("Creates a new publisher.")
-            .Produces<CreatePublisherResponse>()
+            .Produces<CreatePublisherCommandResult>()
             .ProducesValidationProblem();
     }
 
     private static async Task<IResult> HandleAsync(
         [FromServices] ISender sender,
-        [FromBody] CreatePublisherRequest request,
+        [FromBody] CreatePublisherCommand request,
         CancellationToken cancellationToken)
     {
-        var command = request.Adapt<CreatePublisherCommand>();
-        var result = await sender.Send(command, cancellationToken);
-        var response = result.Adapt<CreatePublisherResponse>();
-        return Results.Ok(response);
+        var result = await sender.Send(request, cancellationToken);
+        return Results.Ok(result);
     }
 }

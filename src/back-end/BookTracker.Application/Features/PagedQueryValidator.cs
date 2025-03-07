@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace BookTracker.Application.Features;
 
-public abstract class PagedQueryValidator<T, TData> : AbstractValidator<T> where T : PagedQuery<TData>
+public abstract class PagedQueryValidator<TQuery, TData> : AbstractValidator<TQuery> where TQuery : PagedQuery<TData>
 {
     protected PagedQueryValidator()
     {

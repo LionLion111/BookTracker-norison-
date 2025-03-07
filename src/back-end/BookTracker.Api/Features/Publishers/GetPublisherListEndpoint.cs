@@ -1,12 +1,12 @@
 using BookTracker.Application.Features;
-using BookTracker.Application.Features.Publishers;
 using BookTracker.Application.Features.Publishers.GetList;
+using BookTracker.Persistence.Entities;
 
 using MediatR;
 
 using Microsoft.AspNetCore.Mvc;
 
-namespace BookTracker.Api.Features.Publishers.GetList;
+namespace BookTracker.Api.Features.Publishers;
 
 public class GetPublisherListEndpoint : IEndpoint
 {
@@ -18,7 +18,7 @@ public class GetPublisherListEndpoint : IEndpoint
             .MapGet("", HandleAsync)
             .WithSummary("Get Publisher List")
             .WithDescription("Gets a list of publishers.")
-            .Produces<PagedListResult<PublisherDto>>()
+            .Produces<PagedListResult<Publisher>>()
             .ProducesValidationProblem();
     }
 

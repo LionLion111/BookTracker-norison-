@@ -23,11 +23,9 @@ public class ExceptionFilter : IEndpointFilter
         return exception switch
         {
             BookTrackerNotFoundException notFoundException => Results.Problem(
-                detail: notFoundException.Details,
                 statusCode: StatusCodes.Status404NotFound,
                 title: notFoundException.Message),
             BookTrackerValidationException validationException => Results.Problem(
-                detail: validationException.Details,
                 statusCode: StatusCodes.Status400BadRequest,
                 title: validationException.Message),
             ValidationException fluentValidationException => Results.ValidationProblem(

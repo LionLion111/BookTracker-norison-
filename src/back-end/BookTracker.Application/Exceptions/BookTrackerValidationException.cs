@@ -1,3 +1,3 @@
 namespace BookTracker.Application.Exceptions;
 
-public abstract class BookTrackerValidationException(string message) : BookTrackerException(message);
+public class BookTrackerValidationException(string message) : BookTrackerException(message);
