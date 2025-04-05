@@ -8,9 +8,7 @@ public sealed class PublishersGroup : Group
     {
         Configure("publishers", ep =>
         {
-            ep.Description(builder => builder
-                .Produces(StatusCodes.Status401Unauthorized)
-                .RequireAuthorization());
+            ep.Description(builder => builder.WithDescription("Endpoints for managing publishers."));
         });
     }
 }

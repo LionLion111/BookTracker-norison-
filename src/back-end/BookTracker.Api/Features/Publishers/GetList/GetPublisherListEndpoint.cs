@@ -18,6 +18,7 @@ public class GetPublisherListEndpoint(AppDbContext dbContext, ISieveProcessor si
     {
         Get("/");
         Group<PublishersGroup>();
+        AllowAnonymous();
     }
 
     public override async Task HandleAsync(GetPublisherListRequest req, CancellationToken ct)

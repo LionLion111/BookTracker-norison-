@@ -1,3 +1,4 @@
+using BookTracker.Api.Constants;
 using BookTracker.Api.Data;
 using BookTracker.Api.Data.Entities;
 
@@ -11,6 +12,7 @@ public class CreatePublisherEndpoint(AppDbContext dbContext) : Endpoint<CreatePu
     {
         Post("/");
         Group<PublishersGroup>();
+        Policies(AuthPolicy.Admin);
     }
 
     public override async Task HandleAsync(CreatePublisherRequest req, CancellationToken ct)

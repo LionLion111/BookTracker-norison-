@@ -4,7 +4,9 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace BookTracker.Persistence.Migrations
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
+namespace BookTracker.Api.Migrations
 {
     /// <inheritdoc />
     public partial class Initial : Migration
@@ -301,6 +303,26 @@ namespace BookTracker.Persistence.Migrations
                         principalColumns: new[] { "UserId", "BookId" },
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[,]
+                {
+                    { new Guid("2591b964-1b50-457d-b237-2fcce31fc441"), null, "Moderator", "MODERATOR" },
+                    { new Guid("b0ba862c-9a5d-484d-a7d7-e9f2c52ff89c"), null, "User", "USER" },
+                    { new Guid("cb444e26-d3b2-4f53-9c20-5853cb1fc46b"), null, "Admin", "ADMIN" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { new Guid("2543771a-13b7-43b7-9336-f076269a305a"), 0, "f5d2df72-d54c-444f-aa8c-580729c8e11d", "ihor.matiev@gmail.com", false, false, null, "IHOR.MATIEV@GMAIL.COM", "IHOR.MATIEV@GMAIL.COM", "AQAAAAIAAYagAAAAEKR+/xNwwFrod5bMlWNUaMYDeSr16/KSRLiMSOfOz+z5GHUGcQM/Nn+3zjGQcxP/8g==", null, false, "9b6a3b1a-f473-4683-8251-a64de4277044", false, "ihor.matiev@gmail.com" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "RoleId", "UserId" },
+                values: new object[] { new Guid("cb444e26-d3b2-4f53-9c20-5853cb1fc46b"), new Guid("2543771a-13b7-43b7-9336-f076269a305a") });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
