@@ -13,8 +13,6 @@ using Scalar.AspNetCore;
 
 using Sieve.Services;
 
-using JwtRegisteredClaimNames = System.IdentityModel.Tokens.Jwt.JwtRegisteredClaimNames;
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddAuthorization();
