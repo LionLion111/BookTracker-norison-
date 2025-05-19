@@ -8,12 +8,13 @@
     <PackageVersion Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
     <PackageVersion Include="Mapster.EFCore" Version="5.1.1" />
     <PackageVersion Include="MediatR" Version="12.4.1" />
-    <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.3" />
+    <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.5" />
     <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="9.0.3" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.3">
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageVersion>
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.5" />
     <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
     <PackageVersion Include="Scalar.AspNetCore" Version="2.1.4" />
     <PackageVersion Include="Sieve" Version="2.5.5" />

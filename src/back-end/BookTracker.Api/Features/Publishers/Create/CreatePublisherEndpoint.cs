@@ -32,6 +32,6 @@ public class CreatePublisherEndpoint(AppDbContext dbContext) : Endpoint<CreatePu
         dbContext.Publishers.Add(publisher);
         await dbContext.SaveChangesAsync(ct);
 
-        Response.Id = Guid.NewGuid();
+        Response.Id = Guid.NewGuid(); // publisher.Id;
     }
 }

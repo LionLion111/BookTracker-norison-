@@ -1,4 +1,4 @@
-namespace BookTracker.Api.Features.Publishers;
+namespace BookTracker.Api.Features;
 
 public class AuditDto
 {

@@ -17,9 +17,17 @@
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
       <PackageReference Include="Scalar.AspNetCore" />
       <PackageReference Include="Sieve" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Features\UserBook\" />
     </ItemGroup>
 
 </Project>
