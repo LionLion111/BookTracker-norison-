@@ -1,7 +1,6 @@
 ﻿using BookTracker.Api.Constants;
 using BookTracker.Api.Data.Entities;
 using BookTracker.Api.Data;
-using BookTracker.Api.Features.Publishers;
 using FastEndpoints;
 
 namespace BookTracker.Api.Features.Books.Create;
@@ -34,19 +33,11 @@ public class CreateBookEndpoint(AppDbContext dbContext) : Endpoint<CreateBookReq
             ModifiedDateTime = dateTime,
             CreatedBy = req.UserId,
             ModifiedBy = req.UserId,
-            AuthorBooks = new List<AuthorBook>()
-        };
-
-        if (req.AuthorIds?.Any() == true)
-        {
-            foreach (var authorId in req.AuthorIds)
-            {
-                book.AuthorBooks.Add(new AuthorBook
-                {
-                    AuthorId = authorId
-                });
-            }
-        }
+            AuthorBooks = req.AuthorIds.Select(authorId => new AuthorBook
+            {               
+                AuthorId = authorId                
+            }).ToList(),
+        };        
 
         dbContext.Books.Add(book);
         await dbContext.SaveChangesAsync(ct);

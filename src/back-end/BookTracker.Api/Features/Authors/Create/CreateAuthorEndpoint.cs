@@ -28,20 +28,11 @@ public class CreateAuthorEndpoint(AppDbContext dbContext) : Endpoint<CreateAutho
             ModifiedDateTime = dateTime,
             CreatedBy = req.UserId,
             ModifiedBy = req.UserId,
-            AuthorBooks = new List<AuthorBook>()
-        };
-
-        // Добавим связи только если BookIds не пустые
-        if (req.BookIds?.Any() == true)
-        {
-            foreach (var bookId in req.BookIds)
+            AuthorBooks = req.BookIds.Select(bookId => new AuthorBook
             {
-                author.AuthorBooks.Add(new AuthorBook
-                {
-                    BookId = bookId
-                });
-            }
-        }
+                BookId = bookId
+            }).ToList(),
+        };        
 
         dbContext.Authors.Add(author);
         await dbContext.SaveChangesAsync(ct);

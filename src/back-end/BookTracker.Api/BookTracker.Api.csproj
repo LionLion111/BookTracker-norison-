@@ -26,8 +26,4 @@
       <PackageReference Include="Sieve" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Features\UserBook\" />
-    </ItemGroup>
-
 </Project>
